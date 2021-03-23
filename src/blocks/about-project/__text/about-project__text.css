@@ -1,0 +1,17 @@
+.about-project__text {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  color: #ffffff;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+@media all and (max-width: 400px) {
+  .about-project__text {
+    font-size: 11px;
+    line-height: 16px;
+  }
+}

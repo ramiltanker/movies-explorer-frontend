@@ -1,0 +1,27 @@
+.about-project__header {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    line-height: 27px;
+    letter-spacing: -0.04em;
+    justify-self: flex-start;
+    color: #FFFFFF;
+    margin-bottom: 23px;
+    margin-left: 70px;
+}
+
+@media all and (max-width: 768px) {
+    .about-project__header {
+        margin-left: 50px;
+    }
+}
+
+@media all and (max-width: 376px) {
+    .about-project__header {
+      font-size: 18px;
+      line-height: 22px;
+      margin-left: 18px;
+    }
+  }
+  

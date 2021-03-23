@@ -1,0 +1,29 @@
+.not-found__type {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 140px;
+  line-height: 169px;
+  text-align: center;
+  color: #ffffff;
+  height: 140px;
+  margin: 0;
+  margin-bottom: 40px;
+  margin-top: 250px;
+}
+
+@media all and (max-width: 768px) {
+    .not-found__type {
+      margin-top: 400px;
+    }
+  }
+  
+
+@media all and (max-width: 425px) {
+  .not-found__type {
+    font-size: 80px;
+    line-height: 97px;
+    margin-top: 250px;
+    height: 100px;
+  }
+}

@@ -1,0 +1,10 @@
+.footer__title {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 16px;
+  text-align: center;
+  color: #8b8b8b;
+  margin-bottom: 20px;
+}

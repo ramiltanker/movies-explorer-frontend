@@ -1,0 +1,23 @@
+.tech__box {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: 1fr;
+    margin: auto;
+    column-gap: 10px;
+}
+
+@media all and (max-width: 690px) {
+    .tech__box {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr 1fr;
+        row-gap: 10px;
+    }
+}
+
+@media all and (max-width: 425px) {
+    .tech__box {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        row-gap: 10px;
+    }
+}

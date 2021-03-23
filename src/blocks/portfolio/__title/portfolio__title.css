@@ -1,0 +1,35 @@
+.portfolio__title {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 20px;
+  color: #8b8b8b;
+  margin: 0;
+  margin-bottom: 30px;
+  margin-left: 70px;
+}
+
+@media all and (max-width: 590px) {
+  .portfolio__title {
+    font-size: 14px;
+  }
+}
+
+@media all and (max-width: 885px) {
+  .portfolio__title {
+    margin-left: 50px;
+  }
+}
+
+@media all and (max-width: 767px) {
+  .portfolio__title {
+    margin-left: 20px;
+  }
+}
+
+@media all and (max-width: 590px) {
+  .portfolio__title {
+    margin-left: 10px;
+  }
+}

@@ -1,0 +1,23 @@
+.about-me__text {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 22px;
+  color: #ffffff;
+  margin: 0;
+}
+
+@media all and (max-width: 885px) {
+  .about-me__text {
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
+
+@media all and (max-width: 590px) {
+  .about-me__text {
+    font-size: 11px;
+    line-height: 16px;
+  }
+}

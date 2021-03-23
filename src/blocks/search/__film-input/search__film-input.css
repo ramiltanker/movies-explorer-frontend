@@ -1,0 +1,23 @@
+.search__film-input {
+  width: 100%;
+  border: none;
+  padding: 0;
+  background-color: rgba(255, 255, 255, 0);
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 34px;
+  text-align: center;
+  color: #8b8b8b;
+  padding-bottom: 15px;
+  outline: none;
+}
+
+@media all and (max-width: 375px) {
+  .search__film-input {
+    text-align: left;
+    font-size: 18px;
+    line-height: 22px;
+  }
+}

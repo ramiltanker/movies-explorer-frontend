@@ -1,0 +1,32 @@
+.search {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #202020;
+    padding-left: 70px;
+    padding-right: 70px;
+    padding-top: 70px;
+    padding-bottom: 100px;
+}
+
+@media all and (max-width: 885px) {
+    .search {
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+  }
+  
+  @media all and (max-width: 767px) {
+    .search {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+  
+  @media all and (max-width: 590px) {
+    .search {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }

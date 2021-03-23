@@ -1,0 +1,13 @@
+.tech__technology {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #303030;
+  border-radius: 10px;
+  width: 84px;
+  height: 57px;
+}
+
+.tech__technology:last-of-type {
+    margin-right: 0;
+}

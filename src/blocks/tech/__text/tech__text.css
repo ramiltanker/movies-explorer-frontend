@@ -1,0 +1,20 @@
+.tech__text {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  letter-spacing: -0.04em;
+  color: #ffffff;
+  margin-top: 0;
+  margin-bottom: 100px;
+}
+
+@media all and (max-width: 690px) {
+  .tech__text {
+    margin-bottom: 80px;
+    font-size: 12px;
+    line-height: 18px;
+  }
+}

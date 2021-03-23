@@ -1,0 +1,22 @@
+.about-me__title {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 27px;
+  letter-spacing: -0.04em;
+  color: #ffffff;
+  margin-left: 70px;
+}
+
+@media all and (max-width: 885px) {
+  .about-me__title {
+    margin-left: 50px;
+  }
+}
+
+@media all and (max-width: 767px) {
+  .about-me__title {
+    margin-left: 20px;
+  }
+}

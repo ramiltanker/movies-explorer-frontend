@@ -1,0 +1,35 @@
+.elements__button-more {
+  width: 100%;
+  background: #2f2f2f;
+  border: none;
+  border-radius: 6px;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
+  color: #ffffff;
+  grid-column: 1/4;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  margin-top: 15px;
+  height: 36px;
+}
+
+.elements__button-more:hover {
+  opacity: 0.8;
+}
+
+@media all and (max-width: 1260px) {
+  .elements__button-more {
+    grid-column: 1/3;
+  }
+}
+
+@media all and (max-width: 767px) {
+  .elements__button-more {
+    grid-column: 1/2;
+  }
+}

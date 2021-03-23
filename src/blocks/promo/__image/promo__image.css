@@ -1,0 +1,45 @@
+.promo__image {
+  width: 722px;
+  height: 244px;
+  opacity: 0.7;
+  align-self: flex-end;
+  margin-bottom: 60px;
+  margin-right: 70px;
+}
+
+@media all and (max-width: 885px) {
+    .promo__image {
+      margin-right: 50px;
+    }
+  }
+  
+  @media all and (max-width: 767px) {
+    .promo__image {
+      margin: auto;
+      margin-bottom: 70px;
+      width: 680px;
+      height: 230px;
+    }
+  }
+  
+  @media all and (max-width: 700px) {
+    .promo__image {
+        width: 580px;
+        height: 210px;
+    }
+  }
+
+  @media all and (max-width: 600px) {
+    .promo__image {
+        width: 480px;
+        height: 200px;
+    }
+  }
+
+  @media all and (max-width: 500px) {
+    .promo__image {
+        width: 320px;
+        height: 230px;
+        background-size: contain;
+    }
+  }

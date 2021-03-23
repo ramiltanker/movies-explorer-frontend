@@ -1,0 +1,11 @@
+.header__account-box {
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  .header__account-box {
+    margin: auto;
+    margin-bottom: 90px;
+  }
+}

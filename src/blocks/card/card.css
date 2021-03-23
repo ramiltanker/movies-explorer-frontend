@@ -1,0 +1,23 @@
+.card {
+  display: flex;
+  background: #222222;
+  border-radius: 6px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 364px;
+  height: 281px;
+}
+
+.card:hover .card__close-button {
+  display: flex;
+}
+
+@media all and (max-width: 425px) {
+  .card {
+    width: 300px;
+    height: 237px;
+    margin-top: 14px;
+  }
+}
+

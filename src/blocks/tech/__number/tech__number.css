@@ -1,0 +1,15 @@
+.tech__number {
+  font-size: 50px;
+  line-height: 58px;
+  text-align: center;
+  letter-spacing: -0.04em;
+  color: #ffffff;
+  margin-top: 90px;
+  margin-bottom: 22px;
+}
+
+@media all and (max-width: 690px) {
+    .tech__number {
+        margin-top: 80px;
+    }
+}

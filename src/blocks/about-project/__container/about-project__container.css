@@ -1,0 +1,28 @@
+.about-project__container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-color: #DADADA;
+    border-width: 2px; 
+    border-style: solid;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    margin-top: 0;
+    margin-left: 70px;
+    margin-right: 70px;
+}
+
+@media all and (max-width: 768px) {
+    .about-project__container {
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+}
+
+@media all and (max-width: 376px) {
+    .about-project__container {
+        margin-left: 18px;
+        margin-right: 18px;
+    }
+}

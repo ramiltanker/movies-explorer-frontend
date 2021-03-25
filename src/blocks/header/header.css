@@ -1,0 +1,30 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 70px;
+  padding-right: 70px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
+@media all and (max-width: 885px) {
+  .header {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+
+@media all and (max-width: 767px) {
+  .header {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media all and (max-width: 590px) {
+  .header {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}

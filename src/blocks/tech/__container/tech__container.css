@@ -1,0 +1,33 @@
+.tech__container {
+  display: flex;
+  flex-direction: column;
+  border-color: #dadada;
+  border-width: 2px;
+  border-style: solid;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+  margin-left: 70px;
+  margin-right: 70px;
+}
+
+@media all and (max-width: 885px) {
+  .tech__container {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+}
+
+@media all and (max-width: 767px) {
+  .tech__container {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+
+@media all and (max-width: 590px) {
+  .tech__container {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}

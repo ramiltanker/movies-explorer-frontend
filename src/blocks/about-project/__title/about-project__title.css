@@ -1,0 +1,18 @@
+.about-project__title {
+  font-family: Inter;
+  width: 100%;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: -0.04em;
+  color: #ffffff;
+  margin-top: 0;
+}
+
+@media all and (max-width: 376px) {
+  .about-project__title {
+    font-size: 18px;
+    line-height: 22px;
+  }
+}

@@ -1,0 +1,16 @@
+.profile__exit {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #EE3465;
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  padding: 0;
+  margin-bottom: 70px;
+  cursor: pointer;
+}

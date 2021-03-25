@@ -1,0 +1,14 @@
+.footer__date {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 16px;
+  color: #ffffff;
+}
+
+@media all and (max-width: 425px) {
+  .footer__date {
+    color: #8b8b8b;
+  }
+}

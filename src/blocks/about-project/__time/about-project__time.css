@@ -1,0 +1,28 @@
+.about-project__time {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #000000;
+  background-color: #3ddc84;
+  height: 100%;
+  margin: 0;
+  text-align: center;
+}
+
+.about-project__time#second-time {
+  background-color: #303030;
+}
+
+
+@media all and (max-width: 400px) {
+  .about-project__time {
+    font-size: 11px;
+    line-height: 13px;
+  }
+}

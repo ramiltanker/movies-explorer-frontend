@@ -1,0 +1,15 @@
+.search__icon {
+  border: 1px solid #424242;
+  box-sizing: border-box;
+  border-radius: 48px;
+  width: 34px;
+  height: 34px;
+  margin: 0;
+  margin-bottom: 15px;
+}
+
+@media all and (max-width: 375px) {
+  .search__icon {
+    display: none;
+  }
+}

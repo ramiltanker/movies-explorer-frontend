@@ -1,0 +1,29 @@
+.footer__link {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 16px;
+  text-align: right;
+  color: #ffffff;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+.footer__link:hover {
+    text-decoration: underline;
+}
+
+.footer__link#facebook {
+    margin-right: 0;
+}
+
+@media all and (max-width: 425px) {
+    .footer__link {
+        margin-right: 0;
+        margin-bottom: 12px;
+    }
+    .footer__link#facebook {
+        margin-bottom: 30px;
+    }
+}

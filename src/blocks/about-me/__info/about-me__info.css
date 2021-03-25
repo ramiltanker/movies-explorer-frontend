@@ -1,0 +1,24 @@
+.about-me__info {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 327px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 66px;
+}
+
+@media all and (max-width: 885px) {
+  .about-me__info {
+      grid-template-rows: 307px;
+      column-gap: 50px;
+  }
+}
+
+@media all and (max-width:590px) {
+  .about-me__info {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 224px 18px;
+    row-gap: 40px;
+  }
+}

@@ -1,0 +1,16 @@
+.about-me__portfolio-title {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 20px;
+  color: #8b8b8b;
+  margin: 0;
+  margin-bottom: 30px;
+}
+
+@media all and (max-width: 590px) {
+  .about-me__portfolio-title {
+    font-size: 14px;
+  }
+}

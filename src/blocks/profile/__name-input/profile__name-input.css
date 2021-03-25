@@ -1,0 +1,13 @@
+.profile__name-input {
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  margin-bottom: 16px;
+  text-align: right;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 11px;
+  line-height: 13px;
+  text-align: right;
+  color: #ffffff;
+}

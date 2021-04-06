@@ -11,7 +11,6 @@
   text-align: center;
   color: #ffffff;
   cursor: pointer;
-  margin-top: 180px;
   margin-bottom: 30px;
 }
 
@@ -21,7 +20,5 @@
 
 @media all and (max-width: 435px) {
   .login__button {
-    margin-top: 270px;
-    margin-bottom: 15px;
   }
 }

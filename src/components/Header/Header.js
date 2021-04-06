@@ -38,7 +38,6 @@ function Header(props) {
             className={`header__films ${
               moviesIsActive ? "header__link-active" : ""
             }`}
-            href="#"
             to="movies"
           >
             Фильмы
@@ -47,14 +46,13 @@ function Header(props) {
             className={`header__saved-films ${
               savedMoviesIsActive ? "header__link-active" : ""
             }`}
-            href="#"
             to="saved-movies"
           >
             Сохранённые фильмы
           </Link>
         </div>
         <div className="header__account-box">
-          <Link className="header__account" href="#" to="profile">
+          <Link className="header__account" to="profile">
             Аккаунт
             <div className="header__account-image"></div>
           </Link>

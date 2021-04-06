@@ -64,6 +64,13 @@ function App() {
   const [loginError, setErrorLogin] = React.useState();
   // Ошибка пароля или почты
 
+  // Ошибка обновления Профиля
+  const [profileError, setProfileError] = React.useState();
+  // Ошибка обновления Профиля
+
+  // Ошибка регистрации
+  const [registerError, setRegisterError] = React.useState();
+  // Ошибка регистрации
   // Проверка на короткие фильмы
   const [isChecked, setIsChecked] = React.useState(false);
 
@@ -152,6 +159,7 @@ function App() {
       })
       .catch((error) => {
         console.log(error);
+        setRegisterError(error);
       });
   }
   // Регистрация
@@ -220,6 +228,7 @@ function App() {
       })
       .catch((err) => {
         console.log(err);
+        setProfileError(err);
       });
   }
   // Редактировать данные пользователя
@@ -305,9 +314,10 @@ function App() {
           handleLogout={handleLogout}
           user={currentUser}
           handleEditProfile={handleEditProfile}
+          profileError={profileError}
         />
         <Route path="/signup">
-          <Register handleRegister={handleRegister} />
+          <Register handleRegister={handleRegister} registerError={registerError} />
         </Route>
         <Route path="/signin">
           <Login handleLogin={handleLogin} loginError={loginError} />

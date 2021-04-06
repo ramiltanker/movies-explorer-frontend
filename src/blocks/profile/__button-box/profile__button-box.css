@@ -1,0 +1,13 @@
+.profile__button-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 220px;
+}
+
+@media all and (max-width: 435px) {
+  .profile__button-box   {
+    margin-top: 380px;
+  }
+}

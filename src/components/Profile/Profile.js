@@ -14,8 +14,8 @@ function Profile(props) {
 
   function handleEditProfile() {
     props.handleEditProfile({
-      email: email.values.mail || props.user.email,
-      name: name.values.name || props.user.name
+      email: email.values.mail,
+      name: name.values.name
     });
   }
 
@@ -80,6 +80,14 @@ function Profile(props) {
               )}
             </fieldset>
           </div>
+          <div className="profile__button-box">
+              <span
+                className={`profile__edit-error ${
+                  props.profileError ? "profile__edit-error_active" : ""
+                }`}
+              >
+                {props.profileError ? props.profileError.message : ""}
+              </span>
           <button
             className={`profile__edit ${!name.isValid ? 'profile__edit_inactive' : ''}`}
             type="button"
@@ -88,6 +96,7 @@ function Profile(props) {
           >
             Редактировать
           </button>
+          </div>
         </form>
         <button className="profile__exit" type="button" onClick={handleLogout}>
           Выйти из аккаунта

@@ -11,7 +11,8 @@ function Register(props) {
   const email = useFormWithValidation();
   const password = useFormWithValidation();
 
-  function handleRegister() {
+  function handleRegister(event) {
+    event.preventDefault();
     props.handleRegister(email.values.email, password.values.password, name.values.name);
   }
 
@@ -105,6 +106,14 @@ function Register(props) {
                 ""
               )}
             </div>
+            <div className="register__button-box">
+              <span
+                className={`register__signup-error ${
+                  props.registerError ? "register__signup-error_active" : ""
+                }`}
+              >
+                {props.registerError ? props.registerError.message : ""}
+              </span>
             <button
               type="submit"
               className={`register__button ${!email.isValid || !password.isValid || !name.isValid ? 'register__button_inactive' : ''}`}
@@ -113,6 +122,7 @@ function Register(props) {
             >
               Зарегистрироваться
             </button>
+            </div>
           </form>
           <div className="register__signin">
             <p>Уже зарегистрированы?</p>

@@ -57,7 +57,19 @@ export class MainApi {
         email: profile.email,
         name: profile.name,
       }),
-    }).then((res) => this._getResponseData(res));
+    }).then((res) => {
+      if (res.status === 400) {
+        return Promise.reject({
+          message: "Пользователь с таким email уже существует",
+        });
+      }
+      if (res.status === 500) {
+        return Promise.reject({
+          message: "При обновлении профиля произошла ошибка",
+        });
+      }
+      this._getResponseData(res);
+    });
   }
 
   register(email, password, name) {
@@ -71,7 +83,10 @@ export class MainApi {
     })
       .then((res) => {
         if (res.status === 400) {
-          console.log("Некорректно заполнено одно из полей");
+          return Promise.reject({message: 'Пользователь с таким email уже существует'});
+        }
+        if (res.status === 500) {
+          return Promise.reject({message: 'При регистрации пользователя произошла ошибка'});
         }
         if (!res.ok) {
           return Promise.reject(`Ошибка ${res.status}`);
@@ -99,7 +114,7 @@ export class MainApi {
         console.log("Пользователь с email не найден ");
       }
       if (res.status === 500) {
-        return Promise.reject({message: "Неправильная почта или пароль"});
+        return Promise.reject({ message: "Неправильная почта или пароль" });
       }
       if (!res.ok) {
         return Promise.reject(`Ошибка ${res.status}`);

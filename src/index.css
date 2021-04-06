@@ -141,6 +141,12 @@
 @import url(./blocks/profile/__name-error/profile__name-error.css);
 @import url(./blocks/profile/__name-error/_active/profile__name-error_active.css);
 @import url(./blocks/profile/__edit/_inactive/profile__edit_inactive.css);
+@import url(./blocks/profile/__button-box/profile__button-box.css);
+@import url(./blocks/profile/__edit-error/profile__edit-error.css);
+@import url(./blocks/profile/__edit-error/_active/profile__edit-error_active.css);
+@import url(./blocks/register/__button-box/register__button-box.css);
+@import url(./blocks/register/__signup-error/register__signup-error.css);
+@import url(./blocks/register/__signup-error/_active/register__signup-error_active.css);
 /* Profile */
 
 /* Register */

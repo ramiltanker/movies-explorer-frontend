@@ -9,11 +9,16 @@
   border-left: 0;
   border-right: 0;
   border-top: 0;
+  margin-bottom: 16px;
 }
 
 .profile__box:last-of-type {
   border: none;
   margin-top: 0;
+}
+
+.profile__box#box-email {
+  margin-bottom: 0px;
 }
 
 @media all and (max-width: 435px) {

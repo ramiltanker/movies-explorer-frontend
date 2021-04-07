@@ -150,6 +150,9 @@ function App() {
 
   // Регистрация
   function handleRegister(email, password, name) {
+    console.log(email);
+    console.log(password);
+    console.log(name);
     mainApi
       .register(email, password, name)
       .then((res) => {

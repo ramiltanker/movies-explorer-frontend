@@ -32,7 +32,6 @@ function Profile(props) {
         <form className="profile__form">
           <div className="profile__box">
             <label className="profile__name">Имя</label>
-            <fieldset className="profile__fieldset">
               <input
                 required
                 autoComplete="off"
@@ -42,18 +41,16 @@ function Profile(props) {
                 defaultValue={props.user.name}
                 onChange={name.handleChange}
               />
-              {name.isDirty ? (
+          </div>
+          {name.isDirty ? (
                 <span className="profile__name-error profile__name-error_active">
                   Поле не может быть пустым
                 </span>
               ) : (
                 ""
               )}
-            </fieldset>
-          </div>
-          <div className="profile__box">
+          <div className="profile__box" id="box-email">
             <label className="profile__email">Почта</label>
-            <fieldset className="profile__fieldset" id="email-fieldset">
               <input
                 required
                 autoComplete="off"
@@ -64,7 +61,8 @@ function Profile(props) {
                 defaultValue={props.user.email}
                 onChange={email.handleChange}
               />
-              {email.isDirty ? (
+          </div>
+          {email.isDirty ? (
                 <span className="profile__email-error profile__email-error_active">
                   Поле не может быть пустым
                 </span>
@@ -72,14 +70,12 @@ function Profile(props) {
                 ""
               )}
               {email.errors.mail ? (
-                <span className="profile__email-error profile__email-error_active">
+                <span className="profile__email-error profile__email-error_active" id="email-valid">
                   Неккоректно введён email
                 </span>
               ) : (
                 ""
               )}
-            </fieldset>
-          </div>
           <div className="profile__button-box">
               <span
                 className={`profile__edit-error ${

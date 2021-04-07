@@ -1,7 +1,6 @@
 .profile__email-input {
   background-color: rgba(255, 255, 255, 0);
   border: none;
-  margin-top: 16px;
   text-align: right;
   font-family: Inter;
   font-style: normal;
@@ -10,4 +9,5 @@
   line-height: 13px;
   text-align: right;
   color: #ffffff;
+  margin-bottom: 16px;
 }

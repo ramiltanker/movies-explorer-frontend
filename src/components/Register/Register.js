@@ -13,9 +13,9 @@ function Register(props) {
 
   function handleRegister(event) {
     event.preventDefault();
-    props.handleRegister(email.values.email, password.values.password, name.values.name);
+    props.handleRegister(email.values.mail, password.values.password, name.values.name);
   }
-
+  
   return (
     <>
       <section className="register">

@@ -34,8 +34,6 @@ function Login(props) {
                 id="mail"
                 name="mail"
                 type="email"
-                minLength="5"
-                maxLength="40"
                 placeholder="Почта"
                 onChange={email.handleChange}
                 autoComplete="off"

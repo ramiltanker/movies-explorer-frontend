@@ -63,12 +63,7 @@ export class MainApi {
           message: "Пользователь с таким email уже существует",
         });
       }
-      if (res.status === 500) {
-        return Promise.reject({
-          message: "При обновлении профиля произошла ошибка",
-        });
-      }
-      this._getResponseData(res);
+      return this._getResponseData(res);
     });
   }
 

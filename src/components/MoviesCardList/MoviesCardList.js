@@ -1,6 +1,7 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 import MoviesCard from "../MoviesCard/MoviesCard";
+import MoviesNotFound from "../MoviesNotFound/MoviesNotFound.js";
 
 function MoviesCardList(props) {
   const location = useLocation();
@@ -37,7 +38,7 @@ function MoviesCardList(props) {
       if (screenWidth <= 425) {
         setRenderFilms(props.films.slice(0, 5));
       }
-      if (renderFilms === props.films.length) {
+      if (renderFilms.length === props.films.length) {
         setShowMoreButton(false);
       } else {
         setShowMoreButton(true);
@@ -45,7 +46,22 @@ function MoviesCardList(props) {
     } else {
       setRenderFilms(props.films);
     }
-  }, [props.films, screenWidth]);
+  }, [props.films]);
+
+  React.useEffect(() => {
+    if (props.films.length === 0) {
+      setShowMoreButton(false);
+    }
+    if (screenWidth >= 1280) {
+      props.films.length > 12 ? setShowMoreButton(true) : setShowMoreButton(false);
+    }
+    if (screenWidth <= 1024) {
+      props.films.length > 8 ? setShowMoreButton(true) : setShowMoreButton(false);
+    }
+    if (screenWidth <= 425) {
+      props.films.length > 5 ? setShowMoreButton(true) : setShowMoreButton(false);
+    } 
+  }, [screenWidth, props.films.length]);
 
   function handleShowFilms() {
     if (screenWidth >= 1280) {
@@ -70,6 +86,9 @@ function MoviesCardList(props) {
 
   return (
     <section className="elements">
+      {moviesIsActive
+        ? props.isMovieError && <MoviesNotFound />
+        : props.isSavedMovieError && <MoviesNotFound />}
       {renderFilms.map((data) => (
         <MoviesCard
           film={data}

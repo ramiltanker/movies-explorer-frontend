@@ -1,6 +1,7 @@
 import React from "react";
 
 import Header from "../Header/Header.js";
+import Preloader from "../Preloader/Preloader";
 
 import { useFormWithValidation } from "../FormValidation/FormValidation.js";
 
@@ -18,7 +19,7 @@ function Profile(props) {
       name: name.values.name
     });
   }
-
+  
   return (
     <>
       <Header
@@ -27,6 +28,7 @@ function Profile(props) {
         loggedIn={props.loggedIn}
         menuIsOpen={props.menuIsOpen}
       />
+      {props.isUpdatingProfile && <Preloader/>}
       <section className="profile">
         <p className="profile__hello">Привет, {props.user.name}!</p>
         <form className="profile__form">

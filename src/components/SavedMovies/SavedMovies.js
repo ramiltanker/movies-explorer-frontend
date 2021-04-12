@@ -7,7 +7,6 @@ import Footer from "../Footer/Footer.js";
 import Preloader from "../Preloader/Preloader";
 
 function SavedMovies(props) {
-  
   React.useEffect(() => {
     props.handleFindFilm("");
   }, [1]);
@@ -20,11 +19,16 @@ function SavedMovies(props) {
         loggedIn={props.loggedIn}
         menuIsOpen={props.menuIsOpen}
       />
-      <SearchForm handleFindFilm={props.handleFindFilm} handleChecked={props.handleChecked}/>
+      <SearchForm
+        handleFindFilm={props.handleFindFilm}
+        handleChecked={props.handleChecked}
+        handleFilterShortSavedMovies={props.handleFilterShortSavedMovies}
+      />
       {props.isLoadingData && <Preloader />}
       <MoviesCardList
         films={props.films}
         handleDeleteMovie={props.handleDeleteMovie}
+        isSavedMovieError={props.isSavedMovieError}
       />
       <Footer />
     </>

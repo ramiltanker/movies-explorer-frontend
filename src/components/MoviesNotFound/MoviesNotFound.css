@@ -1,0 +1,28 @@
+.movies-not-found {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 13px;
+  color: #ff004c;
+  text-align: center;
+  grid-column: 1/2;
+}
+
+@media all and (min-width: 1200px) {
+    .movies-not-found {
+        grid-column: 1/4;
+    }
+}
+
+@media all and (max-width: 1260px) {
+    .movies-not-found {
+        grid-column: 1/3;
+    }
+}
+
+@media all and (max-width: 767px) {
+    .movies-not-found {
+        grid-column: 1/2;
+    }
+}

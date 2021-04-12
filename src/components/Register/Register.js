@@ -4,6 +4,7 @@ import { Link, withRouter } from "react-router-dom";
 import logo from "../../images/logo.svg";
 
 import { useFormWithValidation } from "../FormValidation/FormValidation.js";
+import Preloader from "../Preloader/Preloader";
 
 function Register(props) {
 
@@ -19,6 +20,7 @@ function Register(props) {
   return (
     <>
       <section className="register">
+        {props.isSignUpStatus && <Preloader />}
         <div className="register__container">
           <div className="register__top">
             <img className="register__logo" src={logo} alt="Лого" />

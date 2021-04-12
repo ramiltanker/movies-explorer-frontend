@@ -18,6 +18,7 @@ function Movies(props) {
       <SearchForm
         handleFindFilm={props.handleFindFilm}
         handleChecked={props.handleChecked}
+        handleFilterShortMovies={props.handleFilterShortMovies}
       />
       {props.isLoadingData && <Preloader />}
       <MoviesCardList
@@ -26,6 +27,7 @@ function Movies(props) {
         savedFilms={props.savedFilms}
         handleSaveFilm={props.handleSaveFilm}
         handleDeleteMovie={props.handleDeleteMovie}
+        isMovieError={props.isMovieError}
       />
       <Footer />
     </>

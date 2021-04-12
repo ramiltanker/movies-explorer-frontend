@@ -10,7 +10,7 @@ function SearchForm(props) {
   function findFilm() {
     props.handleFindFilm(movie);
   }
-  
+
   return (
     <form className="search" name="search-form" method="post">
       <fieldset className="search__field-set">
@@ -29,7 +29,12 @@ function SearchForm(props) {
         </button>
       </fieldset>
       <div className="search__checkbox">
-        <FilterCheckbox handleChecked={props.handleChecked} />
+        <FilterCheckbox
+          handleChecked={props.handleChecked}
+          handleFilterShortMovies={props.handleFilterShortMovies}
+          handleFilterShortSavedMovies={props.handleFilterShortSavedMovies}
+          nameOfFilm={movie}
+        />
         <p className="checkbox__text">Короткометражки</p>
       </div>
     </form>

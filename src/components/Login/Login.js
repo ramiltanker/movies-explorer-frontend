@@ -5,6 +5,7 @@ import { Link, withRouter } from "react-router-dom";
 import logo from "../../images/logo.svg";
 
 import { useFormWithValidation } from "../FormValidation/FormValidation.js";
+import Preloader from "../Preloader/Preloader";
 
 function Login(props) {
   const email = useFormWithValidation();
@@ -18,6 +19,7 @@ function Login(props) {
   return (
     <>
       <section className="login">
+        {props.isSignInStatus && <Preloader />}
         <div className="login__container">
           <div className="login__top">
             <img className="login__logo" src={logo} alt="Лого" />

@@ -1,7 +1,7 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 
-import noImage from '../../images/no-image.jpg';
+import noImage from "../../images/no-image.jpg";
 
 function MoviesCard(props) {
   const location = useLocation();
@@ -11,7 +11,9 @@ function MoviesCard(props) {
   const savedMoviesIsActive =
     location.pathname === "/saved-movies" ? "header__link-active" : "";
 
-    const isLiked = moviesIsActive ? props.savedMoviesId.indexOf(props.film.id) !== -1 : '';
+  const isLiked = moviesIsActive
+    ? props.savedMoviesId.indexOf(props.film.id) !== -1
+    : "";
 
   const buttonLikeisActive = `${isLiked ? "card__like-button_active" : ""}`;
 
@@ -53,6 +55,8 @@ function MoviesCard(props) {
         href={
           moviesIsActive ? `${props.film.trailerLink}` : `${props.film.trailer}`
         }
+        target="_blank"
+        rel="noreferrer"
       >
         <img
           className="card__image"

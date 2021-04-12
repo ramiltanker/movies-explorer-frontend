@@ -74,6 +74,24 @@ function App() {
   // Проверка на короткие фильмы
   const [isChecked, setIsChecked] = React.useState(false);
 
+  // Обновление профиля (статус)
+  const [isUpdatingProfile, setIsUpdatingProfile] = React.useState(false);
+  // Обновление профиля (статус)
+
+  // Статус авторизации (прелоудер)
+  const [isSignInStatus, setIsSignInStatus] = React.useState(false);
+  // Статус авторизации (прелоудер)
+
+  // Статус регистрации (прелоудер)
+  const [isSignUpStatus, setIsSignUpStatus] = React.useState(false);
+  // Статус регистрации (прелоудер)
+
+  // Ошибка "ничего не найдено"(true или false)
+  const [isMovieError, setIsMovieError] = React.useState(false);
+  const [isSavedMovieError, setIsSavedMovieError] = React.useState(false);
+  // Ошибка "ничего не найдено"(true или false)
+
+  // Проверка на короткие фильмы
   function handleChecked(checked) {
     setIsChecked(checked);
   }
@@ -86,25 +104,52 @@ function App() {
         const filmName = film.nameRU || film.nameEN;
         return filmName.toUpperCase().includes(nameOfFilm.toUpperCase());
       });
+      if (filteredMovies.length === 0) {
+        setIsMovieError(true);
+      } else {
+        setIsMovieError(false);
+      }
       setCurrentFilms(filteredMovies);
-    } if (moviesIsActive && isChecked) {
+    }
+    if (moviesIsActive && isChecked) {
       const filteredMovies = initialFilms.filter((film) => {
         const filmName = film.nameRU || film.nameEN;
-        return filmName.toUpperCase().includes(nameOfFilm.toUpperCase()) && film.duration < 40;
+        return (
+          filmName.toUpperCase().includes(nameOfFilm.toUpperCase()) &&
+          film.duration < 40
+        );
       });
+      if (filteredMovies.length === 0) {
+        setIsMovieError(true);
+      } else {
+        setIsMovieError(false);
+      }
       setCurrentFilms(filteredMovies);
     } else if (savedMoviesIsActive) {
       const filteredMovies = savedMovies.filter((film) => {
         const filmName = film.nameRU || film.nameEN;
         return filmName.toUpperCase().includes(nameOfFilm.toUpperCase());
       });
+      if (filteredMovies.length === 0) {
+        setIsSavedMovieError(true);
+      } else {
+        setIsSavedMovieError(false);
+      }
       setSavedMoviesFiltered(filteredMovies);
     }
     if (savedMoviesIsActive && isChecked) {
       const filteredMovies = savedMovies.filter((film) => {
         const filmName = film.nameRU || film.nameEN;
-        return filmName.toUpperCase().includes(nameOfFilm.toUpperCase()) && film.duration < 40;
+        return (
+          filmName.toUpperCase().includes(nameOfFilm.toUpperCase()) &&
+          film.duration < 40
+        );
       });
+      if (filteredMovies.length === 0) {
+        setIsSavedMovieError(true);
+      } else {
+        setIsSavedMovieError(false);
+      }
       setSavedMoviesFiltered(filteredMovies);
     }
   }
@@ -150,19 +195,20 @@ function App() {
 
   // Регистрация
   function handleRegister(email, password, name) {
-    console.log(email);
-    console.log(password);
-    console.log(name);
     mainApi
       .register(email, password, name)
       .then((res) => {
         if (res) {
-          history.push("/signin");
+          setIsSignUpStatus(true);
+          handleLogin(email, password);
         }
       })
       .catch((error) => {
         console.log(error);
         setRegisterError(error);
+      })
+      .finally(() => {
+        setIsSignUpStatus(false);
       });
   }
   // Регистрация
@@ -176,6 +222,7 @@ function App() {
         if (res.token) {
           localStorage.setItem("jwt", res.token);
           setToken(res.token);
+          setIsSignInStatus(true);
           return res;
         } else {
           return;
@@ -187,8 +234,10 @@ function App() {
         }
       })
       .catch((err) => {
-        console.log(err);
         setErrorLogin(err);
+      })
+      .finally(() => {
+        setIsSignInStatus(false);
       });
   }
   // Авторизация
@@ -197,7 +246,7 @@ function App() {
   function handleLogout() {
     setLoggedIn(false);
     localStorage.removeItem("jwt");
-    history.push("/signin");
+    history.push("/");
   }
   // Выход
 
@@ -228,14 +277,88 @@ function App() {
       .editUser(profile, token)
       .then((newUser) => {
         setCurrentUser(newUser);
+        setIsUpdatingProfile(true);
       })
       .catch((err) => {
-        console.log(err);
         setProfileError(err);
+      })
+      .finally(() => {
+        setIsUpdatingProfile(false);
       });
   }
   // Редактировать данные пользователя
 
+  // Короткометражки
+  function handleFilterShortMovies(nameOfFilm) {
+    if (moviesIsActive && !isChecked) {
+      const filteredMovies = initialFilms.filter((film) => {
+        const filmName = film.nameRU || film.nameEN;
+        return (
+          filmName.toUpperCase().includes(nameOfFilm.toUpperCase()) &&
+          film.duration < 40
+        );
+      });
+      if (filteredMovies.length === 0) {
+        setIsMovieError(true);
+      } else {
+        setIsMovieError(false);
+      }
+      setCurrentFilms(filteredMovies);
+    } else {
+      const filteredMovies = initialFilms.filter((film) => {
+        const filmName = film.nameRU || film.nameEN;
+        return (
+          filmName.toUpperCase().includes(nameOfFilm.toUpperCase()) &&
+          film.duration > 40
+        );
+      });
+      if (filteredMovies.length === 0) {
+        setIsMovieError(true);
+      } else {
+        setIsMovieError(false);
+      }
+      setCurrentFilms(filteredMovies);
+    }
+  }
+
+  function handleFilterShortSavedMovies(nameOfFilm) {
+    if (savedMoviesIsActive && !isChecked) {
+      const filteredMovies = savedMovies.filter((film) => {
+        const filmName = film.nameRU || film.nameEN;
+        return (
+          filmName.toUpperCase().includes(nameOfFilm.toUpperCase()) &&
+          film.duration < 40
+        );
+      });
+      if (filteredMovies.length === 0) {
+        setIsSavedMovieError(true);
+      } else {
+        setIsSavedMovieError(false);
+      }
+      setSavedMoviesFiltered(filteredMovies);
+    } else {
+      const filteredMovies = savedMovies.filter((film) => {
+        const filmName = film.nameRU || film.nameEN;
+        return (
+          filmName.toUpperCase().includes(nameOfFilm.toUpperCase()) &&
+          film.duration > 40
+        );
+      });
+      if (filteredMovies.length === 0) {
+        setIsSavedMovieError(true);
+      } else {
+        setIsSavedMovieError(false);
+      }
+      setSavedMoviesFiltered(filteredMovies);
+    }
+  }
+  // Короткометражки
+
+  // NotFound кнопка назад
+  function handleGoBack() {
+    history.goBack();
+  }
+  // NotFound кнопка назад
   React.useEffect(() => {
     handleTokenCheck();
     const token = localStorage.getItem("jwt");
@@ -293,6 +416,8 @@ function App() {
           handleSaveFilm={handleSaveFilm}
           handleDeleteMovie={handleDeleteMovie}
           savedMoviesId={savedMoviesId}
+          handleFilterShortMovies={handleFilterShortMovies}
+          isMovieError={isMovieError}
         />
         <ProtectedRoute
           path="/saved-movies"
@@ -306,6 +431,8 @@ function App() {
           handleFindFilm={handleFindFilm}
           component={SavedMovies}
           handleDeleteMovie={handleDeleteMovie}
+          handleFilterShortSavedMovies={handleFilterShortSavedMovies}
+          isSavedMovieError={isSavedMovieError}
         />
         <ProtectedRoute
           path="/profile"
@@ -318,15 +445,24 @@ function App() {
           user={currentUser}
           handleEditProfile={handleEditProfile}
           profileError={profileError}
+          isUpdatingProfile={isUpdatingProfile}
         />
         <Route path="/signup">
-          <Register handleRegister={handleRegister} registerError={registerError} />
+          <Register
+            handleRegister={handleRegister}
+            registerError={registerError}
+            isSignUpStatus={isSignUpStatus}
+          />
         </Route>
         <Route path="/signin">
-          <Login handleLogin={handleLogin} loginError={loginError} />
+          <Login
+            handleLogin={handleLogin}
+            loginError={loginError}
+            isSignInStatus={isSignInStatus}
+          />
         </Route>
-        <Route path="/not-found">
-          <NotFoundPage />
+        <Route path="*">
+          <NotFoundPage handleGoBack={handleGoBack} />
         </Route>
       </Switch>
     </CurrentUserContext.Provider>

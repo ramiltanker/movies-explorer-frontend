@@ -4,7 +4,7 @@ import "./Profile.css";
 import Header from "../Header/Header.js";
 import Preloader from "../Preloader/Preloader";
 
-import { useForm, useFormWithValidation } from "../FormValidation/FormValidation.js";
+import { useFormWithValidation } from "../FormValidation/FormValidation.js";
 
 function Profile(props) {
   const name = useFormWithValidation();
@@ -21,6 +21,7 @@ function Profile(props) {
     });
   }
 
+  console.log(email);
   React.useEffect(() => {
     if (props.profileError) {
       props.profileError.message = '';
@@ -50,6 +51,7 @@ function Profile(props) {
               className="profile__name-input"
               placeholder="Имя"
               name="name"
+              value={name.values.name}
               defaultValue={props.user.name}
               onChange={name.handleChange}
             />
@@ -70,6 +72,7 @@ function Profile(props) {
               className="profile__email-input"
               placeholder="Почта"
               name="mail"
+              value={email.values.mail}
               defaultValue={props.user.email}
               onChange={email.handleChange}
             />

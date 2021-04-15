@@ -21,7 +21,6 @@ function Profile(props) {
     });
   }
 
-  console.log(email);
   React.useEffect(() => {
     if (props.profileError) {
       props.profileError.message = '';

@@ -20,7 +20,7 @@ function Header(props) {
 
   const loggedInMenu = (
     <header className="header header_logged-in">
-      <img className="header__logo" src={logo} alt="Логотип" />
+      <Link to="/"><img className="header__logo" src={logo} alt="Логотип" /></Link>
       {burgerMenu}
       <button
         className={`header__close-icon ${
@@ -63,7 +63,7 @@ function Header(props) {
 
   const noLoggedInMenu = (
     <header className="header header_auntification">
-      <img className="header__logo" src={logo} alt="Логотип" />
+      <Link to="/"><img className="header__logo" src={logo} alt="Логотип" /></Link>
       <div className="header__auntification">
         <div className="header__auntification-box">
           <Link className="header__sign-up" to="signup">

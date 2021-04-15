@@ -20,6 +20,9 @@ export function useFormWithValidation() {
   const [isValid, setIsValid] = React.useState(false);
 
   const [isDirty, setIsDirty] = React.useState(false);
+  const [isEmail, setIsEmail] = React.useState(false);
+
+  const re = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
   const handleChange = (event) => {
     const target = event.target;
@@ -30,16 +33,21 @@ export function useFormWithValidation() {
     setIsValid(target.checkValidity());
 
     value ? setIsDirty(false) : setIsDirty(true);
+    name === "mail" && re.test(String(value).toLowerCase())
+      ? setIsEmail(true)
+      : setIsEmail(false);
   };
 
   const resetForm = useCallback(
-    (newValues = {}, newErrors = {}, newIsValid = false) => {
+    (newValues = {}, newErrors = {}, newIsValid = false, newIsDirty = false, newEmail = false) => {
       setValues(newValues);
       setErrors(newErrors);
       setIsValid(newIsValid);
+      setIsDirty(newIsDirty);
+      setIsEmail(newEmail);
     },
-    [setValues, setErrors, setIsValid]
+    [setValues, setErrors, setIsValid, setIsDirty, setIsEmail]
   );
 
-  return { values, handleChange, errors, isValid, resetForm, isDirty };
+  return { values, handleChange, errors, isValid, resetForm, isDirty, isEmail };
 }

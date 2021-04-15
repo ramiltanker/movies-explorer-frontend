@@ -68,6 +68,13 @@ function App() {
   const [profileError, setProfileError] = React.useState();
   // Ошибка обновления Профиля
 
+  // Успешное сохранение профиля
+  const [profileSucces, setProfileSucces] = React.useState({
+    status: false,
+    message: ''
+  });
+  // Успешное сохранение профиля
+
   // Ошибка регистрации
   const [registerError, setRegisterError] = React.useState();
   // Ошибка регистрации
@@ -195,11 +202,11 @@ function App() {
 
   // Регистрация
   function handleRegister(email, password, name) {
+    setIsSignUpStatus(true);
     mainApi
       .register(email, password, name)
       .then((res) => {
         if (res) {
-          setIsSignUpStatus(true);
           handleLogin(email, password);
         }
       })
@@ -216,13 +223,13 @@ function App() {
   // Авторизация
   function handleLogin(email, password) {
     setLoggedIn(true);
+    setIsSignInStatus(true);
     mainApi
       .authorization(email, password)
       .then((res) => {
         if (res.token) {
           localStorage.setItem("jwt", res.token);
           setToken(res.token);
-          setIsSignInStatus(true);
           return res;
         } else {
           return;
@@ -273,11 +280,15 @@ function App() {
 
   // Редактировать данные пользователя
   function handleEditProfile(profile) {
+    setIsUpdatingProfile(true);
     mainApi
       .editUser(profile, token)
       .then((newUser) => {
         setCurrentUser(newUser);
-        setIsUpdatingProfile(true);
+        setProfileSucces({
+          status: true,
+          message: 'Ваши данные успешно обновлены!'
+        });
       })
       .catch((err) => {
         setProfileError(err);
@@ -446,6 +457,7 @@ function App() {
           handleEditProfile={handleEditProfile}
           profileError={profileError}
           isUpdatingProfile={isUpdatingProfile}
+          profileSucces={profileSucces}
         />
         <Route path="/signup">
           <Register

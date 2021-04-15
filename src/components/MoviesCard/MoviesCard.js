@@ -1,10 +1,13 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 
+import getFullImageUrl from '../../utils/getFullImageUrl.js';
 import noImage from "../../images/no-image.jpg";
 
 function MoviesCard(props) {
   const location = useLocation();
+
+  const [image, setImage] = React.useState(getFullImageUrl(props.film));
 
   const moviesIsActive =
     location.pathname === "/movies" ? "header__link-active" : "";
@@ -61,9 +64,7 @@ function MoviesCard(props) {
         <img
           className="card__image"
           src={
-            moviesIsActive
-              ? `https://api.nomoreparties.co${props.film.image.url}`
-              : props.film.image
+            moviesIsActive ? image : props.film.image
           }
           alt={props.film.nameRU || props.film.nameEN}
         />

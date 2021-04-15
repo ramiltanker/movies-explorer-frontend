@@ -11,10 +11,20 @@ function Login(props) {
   const email = useFormWithValidation();
   const password = useFormWithValidation();
 
+
   function handleLogin(event) {
     event.preventDefault();
     props.handleLogin(email.values.mail, password.values.password);
+
+    email.resetForm();
+    password.resetForm();
   }
+  
+  React.useEffect(() => {
+    if (props.loginError) {
+      props.loginError.message = '';
+    }
+  }, [])
 
   return (
     <>
@@ -22,7 +32,7 @@ function Login(props) {
         {props.isSignInStatus && <Preloader />}
         <div className="login__container">
           <div className="login__top">
-            <img className="login__logo" src={logo} alt="Лого" />
+          <Link to="/"><img className="login__logo" src={logo} alt="Лого" /></Link>
             <h2 className="login__title">Рады видеть!</h2>
           </div>
           <form className="login__form">
@@ -36,11 +46,12 @@ function Login(props) {
                 id="mail"
                 name="mail"
                 type="email"
+                value={email.values.mail || ''}
                 placeholder="Почта"
                 onChange={email.handleChange}
                 autoComplete="off"
               />
-              {email.errors.mail ? (
+              {!email.isEmail && email.values.mail ? (
                 <span className="login__email-error login__email-error_active">
                   Неккоректно введён email
                 </span>
@@ -66,6 +77,7 @@ function Login(props) {
                 minLength="6"
                 maxLength="16"
                 placeholder="Пароль"
+                value={password.values.password || ''}
                 onChange={password.handleChange}
                 autoComplete="off"
               />

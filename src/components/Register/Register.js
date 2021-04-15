@@ -15,7 +15,17 @@ function Register(props) {
   function handleRegister(event) {
     event.preventDefault();
     props.handleRegister(email.values.mail, password.values.password, name.values.name);
+    
+    email.resetForm();
+    password.resetForm();
+    name.resetForm();
   }
+
+  React.useEffect(() => {
+    if (props.registerError) {
+      props.registerError.message = '';
+    }
+  }, [])
   
   return (
     <>
@@ -23,7 +33,7 @@ function Register(props) {
         {props.isSignUpStatus && <Preloader />}
         <div className="register__container">
           <div className="register__top">
-            <img className="register__logo" src={logo} alt="Лого" />
+          <Link to="/"><img className="register__logo" src={logo} alt="Лого" /></Link>
             <h2 className="register__title">Добро пожаловать!</h2>
           </div>
           <form className="register__form">
@@ -40,6 +50,7 @@ function Register(props) {
                 maxLength="1000"
                 type="text"
                 placeholder="Имя"
+                value={name.values.name || ''}
                 onChange={name.handleChange}
                 autoComplete="off"
               />
@@ -64,11 +75,12 @@ function Register(props) {
                 id="mail"
                 name="mail"
                 type="email"
+                value={email.values.mail || ''}
                 placeholder="Почта"
                 onChange={email.handleChange}
                 autoComplete="off"
               />
-              {email.errors.mail ? (
+              {!email.isEmail && email.values.mail ? (
                 <span className="register__email-error register__email-error_active">
                   Неккоректно введён email
                 </span>
@@ -92,6 +104,7 @@ function Register(props) {
                 placeholder="Пароль"
                 minLength="6"
                 maxLength="1000"
+                value={password.values.password || ''}
                 onChange={password.handleChange}
                 autoComplete="off"
               />

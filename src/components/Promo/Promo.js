@@ -1,7 +1,6 @@
 import React from "react";
 
 import banner from "../../images/banner.png";
-import logo from '../../images/logo.svg';
 function Promo() {
   return (
     <section className="promo">

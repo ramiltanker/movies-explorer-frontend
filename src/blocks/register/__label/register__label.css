@@ -6,4 +6,9 @@
   line-height: 12px;
   color: #8b8b8b;
   margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+.label-name#label-name {
+  margin-top: 0px;
 }

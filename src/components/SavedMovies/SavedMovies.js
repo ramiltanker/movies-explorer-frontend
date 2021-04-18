@@ -4,21 +4,32 @@ import SearchForm from "../SearchForm/SearchForm.js";
 import MoviesCardList from "../MoviesCardList/MoviesCardList.js";
 import Header from "../Header/Header.js";
 import Footer from "../Footer/Footer.js";
+import Preloader from "../Preloader/Preloader";
 
 function SavedMovies(props) {
+  React.useEffect(() => {
+    props.handleFindFilm("");
+  }, [1]);
 
-  const [loggedIn, setLoggedIn] = React.useState(true);
-  
   return (
     <>
       <Header
         onOpenMenu={props.onOpenMenu}
         onCloseMenu={props.onCloseMenu}
-        loggedIn={loggedIn}
+        loggedIn={props.loggedIn}
         menuIsOpen={props.menuIsOpen}
       />
-      <SearchForm />
-      <MoviesCardList films={props.films} />
+      <SearchForm
+        handleFindFilm={props.handleFindFilm}
+        handleChecked={props.handleChecked}
+        handleFilterShortSavedMovies={props.handleFilterShortSavedMovies}
+      />
+      {props.isLoadingData && <Preloader />}
+      <MoviesCardList
+        films={props.films}
+        handleDeleteMovie={props.handleDeleteMovie}
+        isSavedMovieError={props.isSavedMovieError}
+      />
       <Footer />
     </>
   );

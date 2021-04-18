@@ -7,15 +7,10 @@
   border-right: 0px;
   border-color: #cccccc;
   border-style: solid;
-  margin-bottom: 20px;
   background: #2f2f2f;
   border-radius: 8px;
   color: white;
   padding-left: 15px;
-}
-
-.register__input#password {
-  margin-bottom: 0px;
 }
 
 ::-webkit-input-placeholder {

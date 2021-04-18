@@ -1,0 +1,4 @@
+.profile__edit_inactive {
+  opacity: 0.8;
+  cursor: not-allowed;
+}

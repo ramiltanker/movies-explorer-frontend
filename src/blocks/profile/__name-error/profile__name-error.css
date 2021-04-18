@@ -1,0 +1,11 @@
+.profile__name-error {
+  display: none;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 12px;
+  margin: 0;
+  margin-bottom: 16px;
+  color: #ee3465;
+}

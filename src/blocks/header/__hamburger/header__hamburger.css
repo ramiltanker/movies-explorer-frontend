@@ -1,17 +1,17 @@
 .header__hamburger {
-    display: none;
+  display: none;
 }
 
 @media screen and (max-width: 768px) {
-    .header__hamburger {
-      display: block;
-      width: 44px;
-      height: 44px;
-      border: unset;
-      background-color: unset;
-      background-image: url(../../../images/burger.svg);
-      background-position: center;
-      background-repeat: no-repeat;
-      cursor: pointer;
-    }
+  .header__hamburger {
+    display: block;
+    width: 44px;
+    height: 44px;
+    border: unset;
+    background-color: unset;
+    background-image: url(../../../images/burger.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
   }
+}

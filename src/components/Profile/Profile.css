@@ -1,0 +1,15 @@
+.profile__edit-succes {
+  display: none;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 12px;
+  margin: 0;
+  margin-bottom: 16px;
+  color: #09881a;
+}
+
+.profile__edit-succes_active {
+  display: flex;
+}

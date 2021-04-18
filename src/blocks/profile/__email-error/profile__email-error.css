@@ -1,0 +1,16 @@
+.profile__email-error {
+  display: none;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 12px;
+  margin: 0;
+  margin-top: 16px;
+  color: #ee3465;
+  text-align: right;
+}
+
+.profile__email-error#email-valid {
+  margin-top: 10px;
+}

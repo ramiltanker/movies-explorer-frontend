@@ -1,0 +1,10 @@
+.login__button_inactive {
+  background: #ffffff;
+  opacity: 0.8;
+  cursor: not-allowed;
+  color: #000000;
+}
+
+.login__button_inactive:hover {
+  opacity: 0.8;
+}

@@ -20,7 +20,7 @@ function Header(props) {
 
   const loggedInMenu = (
     <header className="header header_logged-in">
-      <img className="header__logo" src={logo} alt="Логотип" />
+      <Link to="/"><img className="header__logo" src={logo} alt="Логотип" /></Link>
       {burgerMenu}
       <button
         className={`header__close-icon ${
@@ -38,7 +38,6 @@ function Header(props) {
             className={`header__films ${
               moviesIsActive ? "header__link-active" : ""
             }`}
-            href="#"
             to="movies"
           >
             Фильмы
@@ -47,14 +46,13 @@ function Header(props) {
             className={`header__saved-films ${
               savedMoviesIsActive ? "header__link-active" : ""
             }`}
-            href="#"
             to="saved-movies"
           >
             Сохранённые фильмы
           </Link>
         </div>
         <div className="header__account-box">
-          <Link className="header__account" href="#" to="profile">
+          <Link className="header__account" to="profile">
             Аккаунт
             <div className="header__account-image"></div>
           </Link>
@@ -65,7 +63,7 @@ function Header(props) {
 
   const noLoggedInMenu = (
     <header className="header header_auntification">
-      <img className="header__logo" src={logo} alt="Логотип" />
+      <Link to="/"><img className="header__logo" src={logo} alt="Логотип" /></Link>
       <div className="header__auntification">
         <div className="header__auntification-box">
           <Link className="header__sign-up" to="signup">

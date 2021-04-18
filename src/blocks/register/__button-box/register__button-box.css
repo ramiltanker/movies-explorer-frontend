@@ -1,0 +1,14 @@
+.register__button-box {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 220px;
+}
+
+@media all and (max-width: 435px) {
+  .register__button-box {
+    margin-top: 380px;
+  }
+}

@@ -135,6 +135,18 @@
 @import url(./blocks/profile/__name-input/profile__name-input.css);
 @import url(./blocks/profile/__edit/profile__edit.css);
 @import url(./blocks/profile/__exit/profile__exit.css);
+@import url(./blocks/profile/__email-error/profile__email-error.css);
+@import url(./blocks/profile/__email-error/_active/profile__email-error_active.css);
+@import url(./blocks/profile/__fieldset/profile__fieldset.css);
+@import url(./blocks/profile/__name-error/profile__name-error.css);
+@import url(./blocks/profile/__name-error/_active/profile__name-error_active.css);
+@import url(./blocks/profile/__edit/_inactive/profile__edit_inactive.css);
+@import url(./blocks/profile/__button-box/profile__button-box.css);
+@import url(./blocks/profile/__edit-error/profile__edit-error.css);
+@import url(./blocks/profile/__edit-error/_active/profile__edit-error_active.css);
+@import url(./blocks/register/__button-box/register__button-box.css);
+@import url(./blocks/register/__signup-error/register__signup-error.css);
+@import url(./blocks/register/__signup-error/_active/register__signup-error_active.css);
 /* Profile */
 
 /* Register */
@@ -150,6 +162,13 @@
 @import url(./blocks/register/__top/register__top.css);
 @import url(./blocks/register/__logo/register__logo.css);
 @import url(./blocks/register/__container/register__container.css);
+@import url(./blocks/register/__name-error/register__name-error.css);
+@import url(./blocks/register/__name-error/_active/register__name-error_active.css);
+@import url(./blocks/register/__email-error/register__email-error.css);
+@import url(./blocks/register/__email-error/_active/register__email-error_active.css);
+@import url(./blocks/register/__password-error/register__password-error.css);
+@import url(./blocks/register/__password-error/_active/register__password-error_active.css);
+@import url(./blocks/register/__button/_inactive/register__button_inactive.css);
 /* Register */
 
 /* Login */
@@ -165,6 +184,14 @@
 @import url(./blocks/login/__top/login__top.css);
 @import url(./blocks/login/__logo/login__logo.css);
 @import url(./blocks/login/__container/login__container.css);
+@import url(./blocks/login/__password-error/login__password-error.css);
+@import url(./blocks/login/__password-error/_active/login__password-error_active.css);
+@import url(./blocks/login/__email-error/login__email-error.css);
+@import url(./blocks/login/__email-error/_active/register__email-error_active.css);
+@import url(./blocks/login/__button/_inactive/login__button_inactive.css);
+@import url(./blocks/login/__button-box/login__button-box.css);
+@import url(./blocks/login/__signin-error/login__signin-error.css);
+@import url(./blocks/login/__signin-error/_active/login__signin-error_active.css);
 /* Login */
 
 /* NotFound */
